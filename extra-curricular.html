@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 	<meta name = "description" content = "Personal Infotmation and cv.">
 	<meta name = "author" content = "Evangelos Tsiamalos" >
-	<meta name = "keywords" content = "Evangelos, Tsiamalos,Evan,Mathematics,Statistics, Applied Mahematics, Data Science, Machine Learning, University of Crete" >
+	<meta name = "keywords" content = "Evangelos, Tsiamalos, evaggelos tsiamalos, vaggelis, uoc, personal website,Evan,Mathematics,Statistics, Applied Mahematics, Data Science, Machine Learning, University of Crete" >
 	<link rel="icon" href="img/f1.png"> </link>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Extra Curricular</title>
@@ -14,66 +14,107 @@
 </head>
 
 <body>
-    <header>
-		<div class = "main-title">
+	<header>
+		<div class = "header-info">
+
 			<h1>Extra Curricular Activities</h1>
 			<hr>
-
+			<hr>
 		</div>
 
-        <div class = "topnav">
-        
-            <a href = "extra-curricular.html">Extra-Curricular</a>
-			<a href = "mathematics.html">Mathematcs and Projects</a>
-            <a href = "personal.html">Curriculum Vitae</a> 
-            <a href="index.html">Home</a>
-
-        </div>
 	</header>
-	<main style = "font-size: large;">
-		<div id = "content">
+			
+
+
+	<div class = "open-area" >
+		<span class = "btn" style="cursor: pointer; color: white; " onclick="openNav()">&#9776;</span>
+	</div>
 	
-			<div id = "cretanSwingShots">
-				
-				<a href="https://www.facebook.com/cretanswingshots/" target = "_blank"><img id = "crss" src="img/css.jpg" width = "200px" ></a>
-				<div id = "description">
+	<div id = "topnav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href = "extra-curricular.html">Extra-Curricular</a>
+		<a href = "mathematics.html">Mathematics and Projects</a>
+	
+	
+		<a href = "personal.html">Curriculum Vitae</a> 
+		<a href="index.html">Home</a>
+
+	</div>
+	<script>
+        function openNav() {
+      document.getElementById("topnav").style.width="250px";
+     
+      
+    }	
+    
+    function closeNav() {
+      document.getElementById("topnav").style.width = "0";
+    }
+    </script>
+	
+
+	
+	<main>
+		<div class="main-container">
+			<section id = "cretanswingshots">
+
+				<article class = "extra-article">
 					<h2>Cretan Swing Shots</h2>
 					<p>This is a self-organized swing dance team at the university of Crete. It is mostly consisted of University students but it is open to people of all ages and background. The team offers free lindy hop and jazz classes at the Student Center of the university of Crete campus, in Heraklion</p>
 					<p>I am part of the organizing team and an active member.</p>
-					<p>Visit our teams <a href="https://www.facebook.com/cretanswingshots/" target = "_blank" style = "color: rgb(8, 29, 68);">facebook page</a></p>
+					<p>Visit our team's <a href="https://www.facebook.com/cretanswingshots/" target = "_blank" style = "color: rgb(8, 29, 68);">facebook page</a></p>
+					
+				</article>
+				
+				
+				<a href="https://en.wikipedia.org/wiki/Lindy_Hop" target = "_blank"><img id = "crss" src="img/css.jpg" width = "200px" ></a>
+				
+			</section>
+		
+			<section >
+				<article class = "extra-article">
+	
+					<h2>Violin studies</h2>
+					<p>Currently working on the <a href = "https://www.youtube.com/watch?v=9rCVW_4qwRY" target = "_blank">Edward Elgar Violin Concerto in B Minor</a></p>
 
-
-				</div>
-				<div style="padding-top: 50px;">
-					<h2>News</h2>
-					<span> <h3>Work shop with Vasiliki, Kostas and Egle</h3> <p style="font-size: smaller;"> (1 December 2021)</p> </span>
-					<p>Cretan Swing Shots are happy to anounce the winter workshop with Kostas, Vasiliki and Egle.</p>
-				</div>
-
-			</div>
-			<div>
-				<h2>Violin studies</h2>
-				<p>Currently working on the <a href = "https://www.youtube.com/watch?v=9rCVW_4qwRY" target = "_blank">Edward Elgar Violin Concerto in B Minor</a></p>
-			</div>
+				</article>
+			</section>
 		</div>
 
+	</main>       
+				
 
-	</main>
 
-    <footer>
-        <p>Contact: 
-            <a href = "http://math.uoc.gr/en/index.html" target="_blank">
-                <img id = "uoc" src = "img/uoc_logo.gif" width= "90"> 
-    
-            </a>
-            <ul>
-                <li>Office: A319, Department of Mathematics and Applied Mathematics, Heraklion, Greece</li>
-                <li>Phone number: +30 6983435782</li>
-                <li>email: <a href="mailto:tsiamlos.e@gmail.com"   target="_blank"> tsiamalos.e@gmail.com </a>  &nbsp <a href="mailto:temp71@math.uoc.gr"   target="_blank">temp71@math.uoc.gr </a></li>
-    <li> <a href = "https://www.linkedin.com/in/evangelos-tsiamalos-994037217?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BqE2VwNWeQVqd9rmpVRpDQA%3D%3D"> LinkedIn profile</a></li>
-    </ul>
-    </p>
-    </footer> 
+			
+				
+					
+
+		
+		
+	
+		
+
+
+	
+
+	<footer>
+		<div class="footer-info">
+			<p>Contact: </p>
+			<ul>
+			<li>Office: A319, Department of Mathematics and Applied Mathematics, Heraklion, Greece</li>
+			<li>Phone number: +30 6983435782</li>
+			<li>email: <a href="mailto:tsiamlos.e@gmail.com"   target="_blank"> tsiamalos.e@gmail.com </a>  &nbsp <a href="mailto:temp71@math.uoc.gr"   target="_blank">temp71@math.uoc.gr </a></li>
+			
+			<li> <a href = "https://www.linkedin.com/in/evangelos-tsiamalos-994037217?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BqE2VwNWeQVqd9rmpVRpDQA%3D%3D"> LinkedIn profile</a></li>
+		</ul>
+
+		</div>
+		<a href = "http://math.uoc.gr/en/index.html" target="_blank">
+			<img id = "uoc" src = "img/uoc_logo.gif" width= "90"> 
+		</a>
+		
+		
+	</footer> 
 </body>
 
 </html>
