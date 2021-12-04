@@ -44,14 +44,37 @@ main{
     /*padding: 10px;*/
 }
 
+
 .info-block h3 {
     padding-bottom: 10px;
 }
 .info-block{
     padding: 20px;
 }
+.mathematics-article ul{
+    list-style: none;
+    padding: 20px;
+}
+.mathematics-article li{
+    padding-bottom: 10px;
+}
+.mathematics-article h3{
+    padding-bottom: 20px;
+}
+.mathematics-article{
+    padding: 20px;
 
+}
+.extra-article{
+    padding: 20px;
+}
+.extra-article h2{
+    padding-bottom: 20px;
+}
 
+#cretanswingshots a{
+    padding:20px;
+}
 #topnav {
     height: 100%;
     width: 0%;
