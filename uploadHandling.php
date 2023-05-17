@@ -1,3 +1,4 @@
+<?php
 // Config
 $currentDirectory = getcwd();
 $uploadDirectory = '/uploads/';
@@ -15,3 +16,5 @@ $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName);
 
 
 move_uploaded_file($fileTmpName, $target_file)
+
+?>
