@@ -12,8 +12,21 @@
 </head>
 <body>
 
+<script>
 
-	
+	/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  
+}
+
+</script>
 
 	<header>
 		
@@ -26,29 +39,59 @@
 
 			
 			<div id ="top_navigation_bar_links">
-				<a href = "index.html">Home</a>
-				<a href = "syllabus.html">Syllabus</a>
-				<a href = "schedule.html">Schedule</a>
-				<a href = "lectures.html">Lectures</a>
-				<a href = "assignments.html">Assignments</a>
-				<a href = "about_us.html">About Us</a>
+				
+				
+
+					<span id = "first_half">
+	
+						<a href = "index.html">Home</a>
+						<a href = "syllabus.html">Syllabus</a>
+						<a href = "schedule.html">Schedule</a>
+	
+					</span>
+				
+					<span id = "second_half">
+	
+						<a href = "lectures.html"  >Lectures</a>
+						<a href = "assignments.html" >Assignments</a>
+						<a href = "about_us.html" >About Us</a>
+	
+					</span>
+
+			
 
 			</div>
 
 		</div>
 
+
+
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href = "index.html">Home</a>
+			<a href = "syllabus.html">Syllabus</a>
+			<a href = "schedule.html">Schedule</a>
+			<a href = "lectures.html"  >Lectures</a>
+			<a href = "assignments.html" >Assignments</a>
+			<a href = "about_us.html" >About Us</a>
+		  </div>
+
+		  
+			  <span id = "open_button" style="cursor: pointer; color: rgb(26, 11, 84); " onclick="openNav()">&#9776;</span>
+			  
+	
 	</header>
 
 	<main>
 
 		
-
+		<h1>HOMEPAGE OF DATA SCIENCE COURSE<br> SUMMER 2023</h1>
 		<div id = "homepage_images">
 			<img class = "dpi_image" src="img/dpi.png" alt="dpi">
 			<img class = "dpi_image" src="img/dpi_digital_scholars.jpeg" alt = "dpi_digital_scholars">
 		</div>
 		<hr>
-		<h1>DATA SCIENCE</h1>
+		
 		
 
 	</main>
