@@ -4,35 +4,95 @@
 	<meta charset="UTF-8">
 	<meta name = "description" content = "Website created for Data Science course in DPI">
 	<meta name = "author" content = "Evangelos Tsiamalos" >
-	
 	<link rel="icon" href="img/f1.png"> </link>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:url" content="https://www.evangelostsiamalos.com"/>
 	<title>Data Science</title>
-	<link rel="stylesheet" href="css/indexStyle.css">
+	<link rel="stylesheet" href="css/aboutusStyle.css">
 </head>
 <body>
 
+<script>
 
-	
+	/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  
+}
+
+</script>
 
 	<header>
-		<h1>Data Science at DPI <br> Summer 2023</h1>
+		
 		
 		<div id = "top_navigation_bar"> 
 
-			Home
-			Syllabus
-			Lectures
-			Assignments
-			About Us
+			<div id="top_navigation_bar_title">
+				<h1><span id = "title_1">Digital Scholars</span> <br><span id="title_2">Data Science</span><br> <span id = "title_3">Summer 2023</span> </h1>
+			</div>
+
 			
+			<div id ="top_navigation_bar_links">
+				
+				
+
+					<span id = "first_half">
+	
+						<a href = "index.html">Home</a>
+						<a href = "syllabus.html">Syllabus</a>
+						<a href = "schedule.html">Schedule</a>
+	
+					</span>
+				
+					<span id = "second_half">
+	
+						<a href = "lectures.html"  >Lectures</a>
+						<a href = "assignments.html" >Assignments</a>
+						<a href = "about_us.html" >About Us</a>
+	
+					</span>
+
+			
+
+			</div>
+
 		</div>
 
+
+
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href = "index.html">Home</a>
+			<a href = "syllabus.html">Syllabus</a>
+			<a href = "schedule.html">Schedule</a>
+			<a href = "lectures.html"  >Lectures</a>
+			<a href = "assignments.html" >Assignments</a>
+			<a href = "about_us.html" >About Us</a>
+		  </div>
+
+		  
+			  <span id = "open_button" style="cursor: pointer; color: rgb(26, 11, 84); " onclick="openNav()">&#9776;</span>
+			  
+	
 	</header>
 
 	<main>
 
+		
+		<h1>HOMEPAGE OF DATA SCIENCE COURSE<br> SUMMER 2023</h1>
+		<div id = "homepage_images">
+			<img class = "dpi_image" src="img/dpi.png" alt="dpi">
+			<img class = "dpi_image" src="img/dpi_digital_scholars.jpeg" alt = "dpi_digital_scholars">
+		</div>
+		<hr>
+		
+		
 
 	</main>
 			
@@ -48,7 +108,19 @@
 
 
 	<footer>
-
+		<p>
+		<b>Instructor</b><br>
+		Evangelos Tsiamalos<br>
+		</p>
+		
+		<p>
+		<b>Contact</b><br>
+		<a href="mailto: et14@illinois.edu">et14@illinois.edu</a>
+		</p>
+		<p>
+			Digital Scholars Program, DPI<br>
+			University of Illinois at Chicago
+		</p>
 	</footer> 
 </body>
 
