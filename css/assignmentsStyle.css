@@ -67,7 +67,7 @@ header {
 }
 main{
     background-color:rgba(199, 225, 227, 0.189);
-
+    border-top-style: solid;
     text-align: center;
 }
 .dpi_image{
