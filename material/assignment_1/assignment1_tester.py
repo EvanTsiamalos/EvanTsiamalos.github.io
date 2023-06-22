@@ -1,6 +1,6 @@
 class Tester:
 
-    def tesstCase1():
+    def testCase1():
         assert "variable_1" in globals(), "You should have a variable called 'variable_1'."
         assert globals()["variable_1"] == 6**7, "Your calculation for variable does not seem correct. Try again."
     
