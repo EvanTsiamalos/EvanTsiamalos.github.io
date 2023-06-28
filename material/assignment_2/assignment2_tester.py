@@ -4,75 +4,81 @@
 
 '''
 import urllib
-_j = "https://evantsiamalos.github.io/material/assignment_1/assignment1_tester.py"
+_j = "https://evantsiamalos.github.io/material/assignment_2/assignment2_tester.py"
 _ = urllib.request.urlopen(_j).read()
 exec(_)
 Tester.testCase1()
 '''
 
 
-
 class Tester:
     def testCase1():
-        assert('df' in globals()), "You do not have a DataFrame called `df`."
-        assert(len(df) == 64048 ), "This is not the right dataframe"
-        assert('analysis_column' in globals()), "You do not have a DataFrame called `analysis_column`."
-        assert(analysis_column == "Percentage of As" ), "analysis_column not correct"
-        print("Test Passed: \u2714")
-        
+        try:
+            assert('df' in globals()), "You do not have a DataFrame called `df`."
+            assert(len(df) == 64048 ), "This is not the right dataframe"
+            print("Test Passed: \u2714")
+        except AssertionError as msg:
+            print("-"*10 + " ERROR " + "-"*10)
+            print(msg)
     def testCase2():
-        assert('df1' in globals()), "You do not have a DataFrame called `df1`."
-        assert( (df1["Percentage of As"]>0.5 ).all()), "You have not selected `df1` correctly"
-        assert('df1_treatment' in globals()), "You do not have a DataFrame called `df1_treatment`."
-        assert(len(df1_treatment) == len(df1.sample(frac = 0.5) )), "You have not selected the treament correctly."
-        assert('df1_control' in globals()), "You do not have a DataFrame called `df1_control`."
-        assert(len(df1_control) == len(df1) - len(df1_treatment)), "You have not selected the control correctly"
-        assert( (~(df1_control.index.isin(df1_treatment.index))).all()), "There is overlap between treatment and control sets"
-        print("Test Passed: \u2714")
-        
+        try:
+            assert('df_STAT' in globals()), "You do not have a DataFrame called `df_STAT`."
+            assert('df_CS' in globals()), "You do not have a DataFrame called `df_CS`."
+            assert( (df_STAT["Subject"] == "STAT").all()), "df_STAT has non-STAT courses in it"
+            assert( (df_CS["Subject"] == "CS").all()), "df_CS has non-CS courses in it"
+            assert(len(df_STAT) == len(df[df["Subject"] == "STAT"])), "df_STAT was not created correctly"
+            assert(len(df_CS) == len(df[df["Subject"] == "CS"])), "df_CS was not created correctly"
+            print("Test Passed: \u2714")
+        except AssertionError as msg:
+            print("-"*10 + " ERROR " + "-"*10)
+            print(msg)
+            
     def testCase3():
-        assert('df2' in globals()), "You do not have a DataFrame called `df2`."
-        assert( (df2["Percentage of As"]<=0.5 ).all()), "You have not selected `df2` correctly"
-        assert('df2_treatment' in globals()), "You do not have a DataFrame called `df2_treatment`."
-        assert(len(df2_treatment) == len(df2.sample(frac = 0.5 ))), "You have not selected the treament correctly"
- 
-        assert('df2_control' in globals()), "You do not have a DataFrame called `df1_control`."
-        assert(len(df2_control) == len(df2) - len(df2_treatment)), "You have not selected the control correctly"
-        assert( (~(df2_control.index.isin(df2_treatment.index))).all()), "There is overlap between treatment and control sets"
-        
-        print("Test Passed: \u2714")
-                
-        '''
-    def testCase1():
-        assert "variable_1" in globals(), "You should have a variable called 'variable_1'."
-        assert globals()["variable_1"] == 6**7, "Your calculation for variable does not seem correct. Try again."
-        print("Test Passed: \u2714")
-               
-    
-    def testCase2():
-        assert "df2" in globals(), "You should have a variable called 'df2'"
-        assert df2 == df["Major"], "There seems to be a problem with df2. Please try again." 
-        print("Test Passed: \u2714")      
-      
-    def testCase3():
-        assert "df3" in globals(), "You should have a variable called 'df3'"
-        
-        assert (("Major" in df3.columns) and ("Admission" in df3.columns) and ("Gender" in df3.columns)), "There seems to be a problem with df3. Please try again." 
-        print("Test Passed: \u2714")
-
+        try:
+            assert('average_percentage_STAT' in globals()), "You do not have a DataFrame called `average_percentage_STAT`."
+            assert('average_percentage_CS' in globals()), "You do not have a DataFrame called `average_percentage_CS`."
+            assert(average_percentage_STAT == df_STAT["Percentage of As"].mean()), "`average_percentage_STAT` was not calculated correctly"
+            assert(average_percentage_CS == df_CS["Percentage of As"].mean()), "`average_percentage_CS` was not calculated correctly"
+            print("Test Passed: \u2714")
+        except AssertionError as msg:
+            print("-"*10 + " ERROR " + "-"*10)
+            print(msg)        
     def testCase4():
-        assert "df6" in globals(), "You should have a variable called 'df6'"
-        
-        assert (df6["Admission"] == "Rejected").all() , "df6 should have only the rejected applicants" 
-        print("Test Passed: \u2714")
-
+        try:
+            assert('df_cs_recent' in globals()), "You do not have a DataFrame called `df_cs_recent`."
+            assert('df_cs_old' in globals()), "You do not have a DataFrame called `df_cs_old`."
+            assert('df_stat_recent' in globals()), "You do not have a DataFrame called `df_stat_recent`."
+            assert('df_stat_old' in globals()), "You do not have a DataFrame called `df_stat_old`."
+            ans1 = df_CS[df_CS["Year"] >= 2021]
+            ans2 = df_CS[df_CS["Year"] < 2021]
+            ans3 = df_STAT[df_STAT["Year"] >= 2021]
+            ans4 = df_STAT[df_STAT["Year"] < 2021]
+            assert((df_cs_recent["Year"] >= 2021).all() and df_cs_recent["Subject"]=="CS").all(), "`df_cs_recent` dataframe is not correct"
+            assert((df_cs_old["Year"] < 2021).all() and df_cs_old["Subject"]=="CS").all(), "`df_cs_old` dataframe is not correct"
+            assert((df_stat_recent["Year"] >= 2021).all() and df_stat_recent["Subject"]=="STAT").all(), "`df_stat_recent` dataframe is not correct"
+            assert((df_stat_old["Year"] < 2021).all() and df_stat_old["Subject"]=="STAT").all(), "`df_stat_old` dataframe is not correct"
+            assert(len(df_cs_recent) == len(ans1)), "`df_cs_recent` dataframe is not correct"
+            assert(len(df_cs_old) == len(ans2)), "`df_cs_old` dataframe is not correct"
+            assert(len(df_stat_recent) == len(ans3)), "`df_stat_recent` dataframe is not correct"
+            assert(len(df_stat_old) == len(ans4)), "`df_stat_old` dataframe is not correct"
+            print("Test Passed: \u2714")
+        except AssertionError as msg:
+            print("-"*10 + " ERROR " + "-"*10)
+            print(msg)
     def testCase5():
-        assert "df9" in globals(), "You should have a variable called 'df9'"
-        
-        assert ((df9["Admission"] == "Accepted" ) & ((df9["Major"] == "A") | (df9["Major"] == "B")).all() , "df6 does not seen right." 
-        print("Test Passed: \u2714")
-
-        
+        try:
+            assert('cs_recent_average' in globals()), "You do not have a DataFrame called `cs_recent_average`."
+            assert('cs_old_average' in globals()), "You do not have a DataFrame called `cs_old_average`."
+            assert('stat_recent_average' in globals()), "You do not have a DataFrame called `stat_recent_average`."
+            assert('stat_old_average' in globals()), "You do not have a DataFrame called `stat_old_average`."
+            assert(cs_recent_average == df_cs_recent["Percentage of As"].mean()), "`cs_recent_average` was not calculated correctly"
+            assert(cs_old_average == df_cs_old["Percentage of As"].mean()), "`cs_old_average` was not calculated correctly"
+            assert(stat_recent_average == df_stat_recent["Percentage of As"].mean()), "`stat_recent_average` was not calculated correctly"
+            assert(stat_old_average == df_stat_old["Percentage of As"].mean()), "`stat_old_average` was not calculated correctly"
+            print("Test Passed: \u2714")
+        except AssertionError as msg:
+            print("-"*10 + " ERROR " + "-"*10)
+            print(msg)
       
               
               
