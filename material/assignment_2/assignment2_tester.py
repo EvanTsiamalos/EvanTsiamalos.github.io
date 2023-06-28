@@ -4,8 +4,15 @@
 
 
 
-
 class Tester:
+     
+    ## import urllib
+    ## _j = "https://evantsiamalos.github.io/material/assignment_2/assignment2_tester.py"
+    ## _ = urllib.request.urlopen(_j).read()
+    ## exec(_)
+    ## Tester.testCase1()
+    
+
     def testCase1():
         try:
             assert('df' in globals()), "You do not have a DataFrame called `df`."
@@ -73,36 +80,3 @@ class Tester:
         except AssertionError as msg:
             print("-"*10 + " ERROR " + "-"*10)
             print(msg)
-      
-              
-              
-      
-              
-      
-      
-      ################ Exercises 
-    def testCaseExercise1():
-        assert "df_courses" in globals(), "You should have a variable called 'df_courses'"
-        print("\u2714")
-        
-    def testCaseExercise2():
-        assert "num_rows" in globals(), "You should have a variable called 'num_rows'"
-        assert "cols" in globals(), "You should have a variable called 'cols'"
-        assert len(df_courses)==num_rows, "Number of rows is not correct"
-        assert set(cols) == set(df_courses.columns), "The columns are not correct"
-        print("\u2714")
-    
-    def testCaseExercise3():
-        assert "df_STAT" in globals(), "You should have a variable called 'df_STAT'"
-        assert len(df_STAT) == len(df_courses[df_courses["Subject"] == "STAT"]), "The row selection is incorrect"
-        assert (df_STAT["Subject"] == "STAT").all(), "There are non STAT courses in df_STAT"
-        print("\u2714")
-        
-    def testCaseExercise4():
-        assert "df_CS" in globals(), "You should have a variable called 'df_CS'"
-        ans = df_courses[df_courses["Subject"] == "CS" & ((df_courses["Term"] == "Spring") | (df_courses["Number"] > 300))]
-        assert len(df_CS) == len(ans), "The row selection is incorrect"
-        assert (df_CS["Subject"] == "CS" & ((df_CS["Term"] == "Spring") | (df_CS["Number"] > 300))).all(), "There are non STAT courses in df_STAT"
-        print("\u2714")
-        
-        '''
