@@ -2,13 +2,7 @@
 
 
 
-'''
-import urllib
-_j = "https://evantsiamalos.github.io/material/assignment_2/assignment2_tester.py"
-_ = urllib.request.urlopen(_j).read()
-exec(_)
-Tester.testCase1()
-'''
+
 
 
 class Tester:
