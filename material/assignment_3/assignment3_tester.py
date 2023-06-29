@@ -25,7 +25,7 @@ class Tester:
             salary_col = df["Present Salary"]
             for vvar in ["num_employee", "mean_sal", "median_sal", "std_sal", "min_sal", "max_sal"]:
                    assert( vvar in globals()),f"You have not defined a variable called `{vvar}`"
-            assert(num_employee == len(df)), "`num_emploee` was not calculated correctly"
+            assert(num_employee == len(df)), "`num_employee` was not calculated correctly"
             assert(mean_sal == salary_col.mean()), "`mean_sal` was not calculated correctly"      
             assert(median_sal == salary_col.median()), "`median_sal` was not calculated correctly"
             assert(std_sal == salary_col.std()), "`std_sal` was not calculated correctly"       
