@@ -58,7 +58,7 @@ class Tester:
             assert type(successful_cases_2) == int, "The variable `successful_cases_2` should be a number"
             assert successful_cases_2 == len(df_2[
     (df_2["wheel_1"] < df_2["wheel_2"])  |  (df_2["wheel_3"] > df_2["wheel_4"])
-]), "The calculation of `successful_cases_1` is not correct"
+]), "The calculation of `successful_cases_2` is not correct"
             
             assert 'probability_2' in globals() , "You do not have a variable called `probability_2`."
             assert probability_2 == successful_cases_2/1000 , "The calculation of `successful_cases_2` is not correct"
