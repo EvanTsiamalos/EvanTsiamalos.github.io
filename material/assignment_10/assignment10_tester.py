@@ -52,7 +52,8 @@ class Tester:
            
             assert(sample_variance_2 == df_2["Hours of sleep"].var()
                   ), "`sample_size_2` is not correct"
-            ans = 1 - st.norm(mu, math.sqrt(sample_variance_2/sample_size_2)).cdf(sample_average_2)
+            m_ = 6.8
+            ans = 1 - st.norm(m_, math.sqrt(sample_variance_2/sample_size_2)).cdf(sample_average_2)
             assert(probability_2 == ans or math.isclose(probability_2, ans, rel_tol=tol)
                   ), "The calculation of `probability_2` is not correct"
             print(f"\N{PARTY POPPER} All tests passed! \N{PARTY POPPER}")
